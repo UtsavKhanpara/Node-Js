@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f8fc;
+      color: #333;
+    
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #e0ecff;
+      padding: 20px;
+      border-bottom: 2px solid #ccc;
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      color: #2c3e50;
+    }
+
+    nav a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #3498db;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .welcome {
+      text-align: center;
+      padding: 30px 10px 10px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 300px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: #333;
+      animation: slideUp 0.6s ease forwards;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .emoji {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      font-size: 1.4em;
+      color: #2d3e50;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      color: #666;
+    }
+
+    @keyframes slideUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with navigation -->
+  <header>
+    <h1>📘 About Us</h1>
+    <nav>
+      <a href="/">Index</a>
+      <a href="/about">About</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main section -->
+  <section class="welcome">
+    <h2>👨‍💻 Who We Are</h2>
+    <p>Learn about our mission, journey, and the people behind the project.</p>
+  </section>
+
+  <!-- About cards -->
+  <div class="cards">
+    <div class="card">
+      <div class="emoji">🚀</div>
+      <h2>Our Mission</h2>
+      <p>To deliver quality digital experiences and services that make an impact globally.</p>
+    </div>
+    <div class="card">
+      <div class="emoji">🧭</div>
+      <h2>Our Vision</h2>
+      <p>To lead innovation and inspire others through technology, creativity, and passion.</p>
+    </div>
+    <div class="card">
+      <div class="emoji">🤝</div>
+      <h2>Our Values</h2>
+      <p>We believe in transparency, collaboration, learning, and customer satisfaction.</p>
+    </div>
+    <div class="card">
+      <div class="emoji">👨‍👩‍👧‍👦</div>
+      <h2>Our Team</h2>
+      <p>A group of dedicated developers, designers, and thinkers working toward excellence.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 All rights reserved. | Built with ❤️
+  </footer>
+
+</body>
+</html>

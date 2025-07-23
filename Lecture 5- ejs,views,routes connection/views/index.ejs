@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Index Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f8fc;
+      color: #333;
+      margin: 0px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #e0ecff;
+      padding: 20px;
+      border-bottom: 2px solid #ccc;
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      color: #2c3e50;
+    }
+
+    nav a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #3498db;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .welcome {
+      text-align: center;
+      padding: 40px 10px 20px;
+    }
+
+    .welcome h2 {
+      font-size: 2em;
+      color: #2c3e50;
+    }
+
+    .welcome p {
+      font-size: 1.1em;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: #333;
+      animation: slideUp 0.6s ease forwards;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .emoji {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      font-size: 1.4em;
+      color: #2d3e50;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      color: #666;
+    }
+
+    @keyframes slideUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with navigation -->
+  <header>
+    <h1>🌐 Welcome</h1>
+    <nav>
+      <a href="/">Index</a>
+      <a href="/about">About</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main section -->
+  <section class="welcome">
+    <h2>📄 Explore Our Lovely Pages</h2>
+    <p>We're so glad to have you here! 💖 Discover more about us below 👇</p>
+  </section>
+
+  <!-- Cards with links -->
+  <div class="cards">
+    <a href="/" class="card">
+      <div class="emoji">🏠</div>
+      <h2>Index</h2>
+      <p>Step into our digital home where warmth, simplicity, and joy await you! ✨</p>
+    </a>
+    <a href="/about" class="card">
+      <div class="emoji">📘</div>
+      <h2>About</h2>
+      <p>Learn the sweet story behind who we are and why we do what we do. 💡</p>
+    </a>
+    <a href="/blog" class="card">
+      <div class="emoji">📝</div>
+      <h2>Blog</h2>
+      <p>Read heartwarming posts, tips, and stories shared with love and care. 💬</p>
+    </a>
+    <a href="/contact" class="card">
+      <div class="emoji">📞</div>
+      <h2>Contact</h2>
+      <p>We’re just a click away—say hello, share your thoughts, or ask anything! 💌</p>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 All rights reserved. | Made with love & creativity 💖
+  </footer>
+
+</body>
+</html>
