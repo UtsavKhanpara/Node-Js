@@ -1,0 +1,39 @@
+<form align="center" method="post" action="/addtask">
+    <h1>Add UserData</h1>
+    <table border="1" align="center">
+        <tr>
+            <td>Task</td>
+            <td><input type="text" name="task" placeholder="Add a new task"></td>
+        </tr>
+        <tr>
+            <td>Type</td>
+            <td>
+                <select name="type">
+                    <option value="personal">Personal</option>
+                    <option value="office">Office</option>
+                    <option value="other">Other</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>task type</td>
+            <td>
+                <input type="radio" name="tasktype" value="Imp">Imp
+                <input type="radio" name="tasktype" value="No-Imp">No-Imp
+            </td>
+        </tr>
+        <tr>
+            <td>person</td>
+            <td>
+                <input type="checkbox" name="personname" value="manojbhai">manojbhai
+                <input type="checkbox" name="personname" value="vijaybhai">vijaybhai
+                <input type="checkbox" name="personname" value="rameshbhai">rameshbhai
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit"></td>
+        </tr>
+    </table>
+    <a href="/showtask"> showtodo</a>
+</form>

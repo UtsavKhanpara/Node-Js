@@ -1,27 +1,28 @@
 const express=require("express");
-const port=9091;
+const port=9000;
 const app=express();
-let record=[];
+let  record=[];
 
-app.set("view engine","ejs")
+app.set("view engine","ejs");
 app.use(express.urlencoded());
 
 app.get('/',(req,res)=>{
-    return res.render("view",{
+    return res.render('view',{
         record
-    });
-})
+    })
+});
+
 app.get('/add',(req,res)=>{
-    return res.render("add");
+    return res.render('add')
 })
 
 app.post('/adduser',(req,res)=>{
-    let {name,email,password}=req.body;
+    const{name,email,password}=req.body;
 
-    let obj={
-        id:Math.floor(Math.random()*1000),
+    const obj={
+        id:Math.floor(Math.random()*10000),
         name,
-        email,
+        email,  
         password
     }
     record.push(obj);
@@ -29,9 +30,17 @@ app.post('/adduser',(req,res)=>{
     return res.redirect('/');
 })
 
+app.get('/edituser',(req,res)=>{
+    let id=req.query.editid;
+    let single=record.find(val=>val.id ==id);
+    return res.render('/edit',{
+        single
+    })
+})
+
 app.get('/deleteuser',(req,res)=>{
-    let id=req.query.deleteid;
-    let deletedata=record.filter(val=>val.id != id)
+    const id=req.query.deleteid;
+    const deletedata=record.filter(val=>val.id !=id);
     record=deletedata;
     console.log("Record Deleted");
     return res.redirect('/');
@@ -42,5 +51,6 @@ app.listen(port,(err)=>{
         console.log(err);
         return false;
     }
-    console.log(`server running on port`+port);
+    console.log(`server is running on port ${port}`);
+    
 })

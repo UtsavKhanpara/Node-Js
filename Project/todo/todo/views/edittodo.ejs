@@ -1,0 +1,44 @@
+<form align="center" method="post" action="/edittask/<%=fetchobject.id%>">
+    <h1>Edit UserData</h1>
+    <table border="1" align="center">
+        <tr>
+            <td>Enter task:-</td>
+            <td><input type="text" name="task" value="<%=fetchobject.task%>"></td>
+        </tr>
+        <tr>
+            <td>Enter type:-</td>
+            <td><select name="type" >
+               <option >---select---</option>
+                <option value="office"<% if(fetchobject.type=='office'){%><%='selected'%><%}%>>office</option>
+                <option value="Home" <% if(fetchobject.type=='Home'){%><%='selected'%><%}%>>Home</option>
+                <option value="private" <% if(fetchobject.type=='private'){%><%='selected'%><%}%>>private</option>
+            </select></td>
+        </tr>
+         <tr>
+            <td>task type</td>
+            <td>
+                <input type="radio" name="tasktype" value="Imp"<% if(fetchobject.tasktype=='Imp'){%><%='checked'%><%}%>>Imp
+                <input type="radio" name="tasktype" value="No-Imp"<% if(fetchobject.tasktype=='No-Imp'){%><%='checked'%><%}%>>No-Imp
+            </td>
+        </tr>
+        <tr>
+    <td>Person</td>
+    <td>
+        <input type="checkbox" name="personname" value="manojbhai"
+            <% if(fetchobject.personname.includes('manojbhai')) { %> checked <% } %> > manojbhai
+
+        <input type="checkbox" name="personname" value="vijaybhai"
+            <% if(fetchobject.personname.includes('vijaybhai')) { %> checked <% } %> > vijaybhai
+
+        <input type="checkbox" name="personname" value="rameshbhai"
+            <% if(fetchobject.personname.includes('rameshbhai')) { %> checked <% } %> > rameshbhai
+    </td>
+</tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit" value="edit"></td>
+        </tr>
+    </table>
+    <a href="/showtask"> showtodo</a>
+</form>

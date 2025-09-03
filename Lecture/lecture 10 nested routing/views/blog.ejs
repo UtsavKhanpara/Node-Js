@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-container {
+            max-width: 900px;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .blog-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+        }
+
+        .blog-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .blog-meta {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .blog-content {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Fade in animation */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog-card">
+            <div class="blog-title">10 Tips for Healthy Living</div>
+            <div class="blog-meta">By John Doe | Aug 21, 2025</div>
+            <div class="blog-content">
+                Living a healthy life doesn’t have to be complicated. Focus on eating fresh fruits and vegetables, staying hydrated, exercising regularly, and getting enough sleep.
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <div class="blog-title">The Benefits of Meditation</div>
+            <div class="blog-meta">By Jane Smith | Aug 20, 2025</div>
+            <div class="blog-content">
+                Meditation can reduce stress, improve focus, and boost mental health. Spending just 10 minutes a day practicing mindfulness can make a big difference.
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <div class="blog-title">Exploring Nature: Hiking Tips</div>
+            <div class="blog-meta">By Mike Johnson | Aug 18, 2025</div>
+            <div class="blog-content">
+                Hiking is a great way to stay fit and enjoy the outdoors. Always carry water, wear comfortable shoes, and respect nature while exploring trails.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<%- include("header") %>
+    <%   let name=admindata.name.split(" ") %>
+    <form action="/admin/updateadmin/<%= admindata._id %>" method="post" enctype="multipart/form-data">
+        <div class="container">
+            <div class="page-inner">
+                <div class="page-header">
+                    <h3 class="fw-bold mb-3">Forms</h3>
+                    <ul class="breadcrumbs mb-3">
+                        <li class="nav-home">
+                            <a href="#">
+                                <i class="icon-home"></i>
+                            </a>
+                        </li>
+                        <li class="separator">
+                            <i class="icon-arrow-right"></i>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Forms</a>
+                        </li>
+                        <li class="separator">
+                            <i class="icon-arrow-right"></i>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Basic Form</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Admin Form</div>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 ">
+
+                                        <div class="form-group">
+                                            <label for="email2">First Name</label>
+                                            <input type="text" name="fname" value="<%= name[0]%>" class="form-control" id="email2"
+                                                placeholder="Enter First Name" />
+
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="text" name="password" class="form-control" id="password"
+                                                placeholder="Password" />
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>Gender</label><br />
+                                            <div class="d-flex">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender"
+                                                        value="Male" id="flexRadioDefault1" <% if(admindata.gender == 'Male'){ %><%= 'checked'%><%}%>> 
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        Male
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender"
+                                                        value="Female" id="flexRadioDefault2" <% if(admindata.gender == 'Female'){ %><%= 'checked'%><%}%>>  
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        Female
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <% var country=["usa","dubai","africa","canada"] %>
+                                                <label for="exampleFormControlSelect1">Select Country</label>
+                                                <select name="country" class="form-select" id="exampleFormControlSelect1">
+                                                    <option>select Country</option>
+                                                    <% country.map((val,index)=>{ %>
+                                                <option value="<%= val%>"
+                                                    <% if(val==admindata.country){%>
+                                                        <%='selected'%><%}%>>
+                                                    <%= val%></option>
+                                           <% }) %>
+
+                                                </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Select Images</label>
+                                            <input type="file" name="profile" class="form-control-file"
+                                                id="exampleFormControlFile1" />
+                                                <img src="<%= admindata.profile%>" height="70px" width="70px" alt="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="comment">Comment Box</label>
+                                            <textarea name="message" class="form-control" id="comment" rows="5">
+                                                <%= admindata.message%>
+                          </textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <div class="form-group">
+                                            <div class="input-group mb-3">
+
+
+                                                <input type="text" class="form-control" name="lname" value="<%= name[1]%>"
+                                                    placeholder="Enter Last Name" aria-label="Username"
+                                                    aria-describedby="basic-addon1" />
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="form-group">
+                                            <div class="input-icon">
+                                                <input name="search" type="text" value="<%= admindata.search%>" class="form-control"
+                                                    placeholder="Search for..." />
+                                                <span class="input-icon-addon">
+                                                    <i class="fa fa-search"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="form-label">Your skills</label>
+                                            <br>
+                                            <div class="selectgroup selectgroup-pills">
+                                                <label class="selectgroup-item">
+                                                    <input type="checkbox" name="skills" value="HTML"
+                                                        class="selectgroup-input"  <% if(admindata.skills.includes('HTML')) { %> checked <% } %> > 
+                                                    <span class="selectgroup-button">HTML</span>
+                                                </label>
+                                                <label class="selectgroup-item">
+                                                    <input type="checkbox" name="skills" value="CSS"
+                                                        class="selectgroup-input"  <% if(admindata.skills.includes('CSS')) { %> checked <% } %> >
+                                                    <span class="selectgroup-button">CSS</span>
+                                                </label>
+                                                <label class="selectgroup-item">
+                                                    <input type="checkbox" name="skills" value="PHP"
+                                                        class="selectgroup-input"  <% if(admindata.skills.includes('PHP')) { %> checked <% } %> >
+                                                    <span class="selectgroup-button">PHP</span>
+                                                </label>
+                                                <label class="selectgroup-item">
+                                                    <input type="checkbox" name="skills" value="JavaScript"
+                                                        class="selectgroup-input"  <% if(admindata.skills.includes('JavaScript')) { %> checked <% } %> > 
+                                                    <span class="selectgroup-button">JavaScript</span>
+                                                </label>
+                                                <label class="selectgroup-item">
+                                                    <input type="checkbox" name="skills" value="Ruby"
+                                                        class="selectgroup-input"  <% if(admindata.skills.includes('Ruby')) { %> checked <% } %> >
+                                                    <span class="selectgroup-button">Ruby</span>
+                                                </label>
+
+                                                <label class="selectgroup-item">
+                                                    <input type="checkbox" name="skills" value="C++"
+                                                        class="selectgroup-input"  <% if(admindata.skills.includes('C++')) { %> checked <% } %> >
+                                                    <span class="selectgroup-button">C++</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-action">
+                                <button class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <%- include("footer") %>

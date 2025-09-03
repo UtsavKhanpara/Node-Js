@@ -1,0 +1,30 @@
+/* public/css/styles.css */
+
+body .card {
+  max-width: 540px;
+}
+.answer-btn {
+  text-align: left;
+  white-space: normal;
+}
+
+/* Correct (green) */
+.answer-btn.selected-correct,
+.answer-btn.reveal-correct {
+  background-color: #b7e4c7 !important; /* green-ish */
+  border-color: #b7e4c7 !important;
+  color: #07251a !important;
+}
+
+/* Wrong (red) */
+.answer-btn.selected-wrong {
+  background-color: #f8c2c0 !important; /* red-ish */
+  border-color: #f8c2c0 !important;
+  color: #4a0202 !important;
+}
+
+/* make buttons look like the image (rounded) */
+.answer-btn {
+  border-radius: 6px;
+  padding: 12px 16px;
+}

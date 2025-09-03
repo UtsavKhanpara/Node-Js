@@ -1,0 +1,39 @@
+<div align="center">
+    <table border="1" align="center">
+
+        <h1>View Todo</h1>
+        <tr>
+            <td>No</td>
+            <td>Task</td>
+            <td>Types</td>
+            <td>tasktype</td>
+            <td>personname</td>
+            <td>Action</td>
+        </tr>
+        <%alltasks.map((v,i)=>{%>
+            <tr>
+                <td>
+                    <%=++i%>
+                </td>
+                <td>
+                    <%=v.task%>
+                </td>
+                <td>
+                    <%=v.type%>
+                </td>
+                <td>
+                    <%=v.tasktype%>
+                </td>
+                <td>
+                    <%=v.personname%>
+                </td>
+                <td><a href="/deleteTodo?todoId=<%=v.id%>">Delete</a>
+                    <a href="/updateTodo/<%= v.id %>">Edit</a>
+                </td>
+            </tr>
+
+            <%})%>
+
+    </table>
+    <a href="/">add task</a>
+</div>

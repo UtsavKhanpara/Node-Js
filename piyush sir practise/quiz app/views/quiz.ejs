@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include partials/head %>
+  </head>
+  <body class="bg-dark bg-gradient d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card shadow p-4" style="width: 540px; border-radius: 12px;">
+      <h4 class="fw-bold">Simple Quiz</h4>
+      <hr />
+
+      <div id="quiz-area">
+        <p id="questionText" class="fw-semibold"></p>
+        <div id="options" class="d-grid gap-2"></div>
+        <div class="d-flex justify-content-between align-items-center mt-4">
+          <small id="progress" class="text-muted"></small>
+          <button id="nextBtn" class="btn btn-primary px-4" disabled>Next</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Embed questions -->
+    <script>
+      window.__QUESTIONS__ = <%- JSON.stringify(questions).replace(/</g, "\\u003c") %>;
+    </script>
+
+    <script src="/js/quiz.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

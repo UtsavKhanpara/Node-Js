@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .comment-container {
+            max-width: 800px;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding: 0 20px;
+        }
+
+        .comment-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .comment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+
+        .comment-author {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .comment-meta {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .comment-text {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Fade in animation */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="comment-container">
+        <div class="comment-card">
+            <div class="comment-author">John Doe</div>
+            <div class="comment-meta">Aug 21, 2025 | 2:30 PM</div>
+            <div class="comment-text">
+                This is a very informative blog post! I especially liked the section about healthy living tips.
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-author">Jane Smith</div>
+            <div class="comment-meta">Aug 21, 2025 | 3:15 PM</div>
+            <div class="comment-text">
+                Great article! Meditation has really helped me reduce stress and improve focus. Thanks for sharing!
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-author">Mike Johnson</div>
+            <div class="comment-meta">Aug 20, 2025 | 10:45 AM</div>
+            <div class="comment-text">
+                I loved the hiking tips! I will definitely follow them on my next outdoor trip.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

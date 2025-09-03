@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Blog</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+       background: url("https://t3.ftcdn.net/jpg/08/06/10/36/360_F_806103697_E9Y1vKhtQimCEIiA75QWEn4NdZe7lQXj.jpg");
+       background-repeat: no-repeat;
+       background-position: center;
+       background-size: cover;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 40px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: orange;
+      letter-spacing: 1px;
+    }
+    header .logo span { color: #444; }
+    header a {
+      text-decoration: none;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+    header a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(255,126,95,0.4);
+    }
+
+    /* Form Container */
+    .form-container {
+      max-width: 520px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      animation: fadeInUp 0.8s ease;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ff7e5f;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 15px;
+      display: block;
+      color: #555;
+    }
+    input[type="text"],
+    textarea,
+    input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+    input:focus, textarea:focus {
+      border-color: #ff7e5f;
+      box-shadow: 0 0 8px rgba(255,126,95,0.3);
+      outline: none;
+    }
+
+    /* Checkbox Styling */
+    .checkbox-group {
+      margin-top: 10px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #f9f9f9;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .checkbox-group label:hover {
+      background: #ffecd2;
+    }
+
+    /* Button */
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      border: none;
+      color: #fff;
+      font-size: 17px;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(255,126,95,0.4);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Retr<span>ium</span></div>
+    <a href="/">🏠 Home</a>
+  </header>
+
+  <!-- Add Blog Form -->
+  <div class="form-container">
+    <h2>➕ Add New Blog</h2>
+    <form action="/adduser" method="post" enctype="multipart/form-data">
+      <label>Blog Title</label>
+      <input type="text" name="blogtitle" required>
+
+      <label>Blog Description</label>
+      <textarea name="blogdescription" rows="4" required></textarea>
+
+      <label>Blog Type</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="blogtype" value="Technology"> Technology</label>
+        <label><input type="checkbox" name="blogtype" value="Lifestyle"> Lifestyle</label>
+        <label><input type="checkbox" name="blogtype" value="Education"> Education</label>
+      </div>
+
+      <label>Blog Image</label>
+      <input type="file" name="blogimage" required>
+
+      <button type="submit">🚀 Publish Blog</button>
+    </form>
+  </div>
+
+</body>
+</html>
